@@ -1,0 +1,297 @@
+/* Reset styles for body and default margin/padding */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for the overlay header */
+header.overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: right;
+}
+
+header.overlay h1 {
+    margin: 0;
+}
+
+/* Button styling */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Section widths and centering */
+.main-banner, .product-categories, .new-products {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Main banner styles using CSS Grid */
+.main-banner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.banner-left{
+    position: relative;
+}
+.banner-left .btn{
+    position: relative;
+	background-color: #ffffff;
+    color: #4644c3;
+    border-radius: 0px;
+}
+
+.banner-left img,
+.banner-right img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+/* Product categories section using Flexbox */
+.product-categories {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.category {
+    flex: 1 1 calc(20% - 25px); /* Adjust to have three categories per row */
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Center align content */
+}
+
+.category img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.category-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #676561;
+    margin-bottom: 10px;
+}
+
+.category .btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* New products carousel */
+.new-products {
+    background-color: #f0f0f0; /* Set the background color */
+    padding: 20px 0px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 100%; /* Ensure the section covers the entire viewport width */
+}
+
+.new-products h2 {
+    margin-bottom: 20px;
+}
+
+.glide-container {
+    width: 100%; /* Take full width of parent */
+    max-width: 70%; /* Limit width to 70% of viewport width */
+    margin: 0 auto; /* Center align */
+}
+
+.glide__slide {
+    list-style: none;
+    text-align: center;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product-price {
+    color: #007bff;
+}
+
+/* GlideJS arrows */
+.glide__arrow {
+    background-color: #cccccc !important;
+    border-radius: 50% !important;
+    border: none !important;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.glide__arrow--left {
+    left: -50px !important; /* Adjust distance from left */
+}
+
+.glide__arrow--right {
+    right: -50px !important; /* Adjust distance from right */
+}
+
+/* GlideJS bullets */
+.glide__bullets {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: -30px!important;
+    width: 100%;
+}
+
+.glide__bullet {
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 12px;
+    margin: 0 5px;
+    padding: 0;
+    transition: background-color 0.3s ease;
+    width: 12px;
+}
+
+.glide__bullet--active {
+    background-color: black !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .main-banner {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-right {
+        grid-template-rows: auto;
+    }
+
+    .product-categories {
+        justify-content: center;
+    }
+
+    .category {
+        flex-basis: 45%;
+        margin-bottom: 20px;
+    }
+
+    .glide-container {
+        max-width: 100%;
+    }
+
+    .glide__arrow--left {
+        left: -30px !important;
+    }
+
+    .glide__arrow--right {
+        right: -30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-banner, .product-categories, .new-products {
+        width: 90%;
+    }
+
+    .main-banner {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-right {
+        grid-template-rows: auto;
+    }
+
+    .product-categories {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .category {
+        width: 100%; /* Each category takes 100% width */
+        display: flex;
+        align-items: center;
+    }
+
+    .category img {
+        width: 50%; /* Image takes 50% of the width */
+        text-align: right;
+    }
+
+    .category-content {
+        width: 50%;
+        text-align: left;
+    }
+
+    .category-title, .category .btn {
+        width: 50%;
+    }
+
+    .category .btn {
+        background-color: #ffffff;
+        color: #0024ff;
+        margin-top: 5px !important;
+        padding: 0 !important; /* Remove padding to match the style in the image */
+    }
+
+    .glide-container {
+        max-width: 100%;
+    }
+
+    .glide__arrow--left {
+        left: -20px !important;
+    }
+
+    .glide__arrow--right {
+        right: -20px !important;
+    }
+
+    .glide__bullets {
+        bottom: -2em!important;
+    }
+}
